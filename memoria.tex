@@ -3,17 +3,17 @@
 %%
 %% Por Gregorio Robles <grex arroba gsyc.urjc.es>
 %%     Grupo de Sistemas y Comunicaciones
-%%     Escuela Técnica Superior de Ingenieros de Telecomunicación
+%%     Escuela Tï¿½cnica Superior de Ingenieros de Telecomunicacion
 %%     Universidad Rey Juan Carlos
 %% (muchas ideas tomadas de Internet, colegas del GSyC, antiguos alumnos...
 %%  etc. Muchas gracias a todos)
 %%
-%% La última versión de esta plantilla está siempre disponible en:
+%% La ultima version de esta plantilla esta siempre disponible en:
 %%     https://github.com/gregoriorobles/plantilla-memoria
 %%
 %% Para obtener PDF, ejecuta en la shell:
 %%   make
-%% (las imágenes deben ir en PNG o JPG)
+%% (las imagenes deben ir en PNG o JPG)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -23,13 +23,14 @@
 \usepackage[a4paper, left=2.5cm, right=2.5cm, top=3cm, bottom=3cm]{geometry}
 \usepackage{times}
 \usepackage[latin1]{inputenc}
-\usepackage[spanish]{babel} % Comenta esta línea si tu memoria es en inglés
+\usepackage[spanish]{babel} % Comenta esta lï¿½nea si tu memoria es en inglï¿½s
 \usepackage{url}
 %\usepackage[dvipdfm]{graphicx}
 \usepackage{graphicx}
 \usepackage{float}  %% H para posicionar figuras
-\usepackage[nottoc, notlot, notlof, notindex]{tocbibind} %% Opciones de índice
+\usepackage[nottoc, notlot, notlof, notindex]{tocbibind} %% Opciones de ï¿½ndice
 \usepackage{latexsym}  %% Logo LaTeX
+\usepackage{hyperref}
 
 \title{Memoria del Proyecto}
 \author{Nombre del autor}
@@ -61,27 +62,27 @@
 \vspace{3cm}
 
 \Large
-TITULACIÓN EN MAYÚSCULAS
+INGENIER\'IA TELEM\'ATICA
 
 \vspace{0.4cm}
 
 \large
-Curso Académico 20XX/20XX
+Curso Acad\'emico 2017/2018
 
 \vspace{0.8cm}
 
-Trabajo Fin de Grado/Máster
+Trabajo Fin de Grado
 
 \vspace{2.5cm}
 
 \LARGE
-TÍTULO DEL TRABAJO EN MAYÚSCULAS
+APLICACI\'ON ANDROID RED COLABORATIVA PARA OBTENER INFORMACI\'ON SOBRE TRABAJOS Y SUELDOS EN EL MERCADO LABORAL
 
 \vspace{4cm}
 
 \large
-Autor : Nombre del Alumno/a \\
-Tutor : Dr. Gregorio Robles
+Autor : Rub\'en S\'anchez Rivero \\
+Tutor : Pedro de Las Heras Quir\'os
 \end{center}
 \end{titlepage}
 
@@ -99,21 +100,21 @@ Tutor : Dr. Gregorio Robles
 \vspace{-4cm}
 \begin{center}
 \LARGE
-\textbf{Trabajo Fin de Grado/Máster}
+\textbf{Trabajo Fin de Grado}
 
 \vspace{1cm}
 \large
-Título del Trabajo con Letras Capitales para Sustantivos y Adjetivos
+Aplicaci\'on Android Red Colaborativa para obtener Informaci\'on sobre Trabajos y Sueldos en el Mercado Laboral
 
 \vspace{1cm}
 \large
-\textbf{Autor :} Nombre del Alumno/a \\
-\textbf{Tutor :} Dr. Gregorio Robles Martínez
+\textbf{Autor :} Rub\'en S\'anchez Rivero \\
+\textbf{Tutor :} Pedro de Las Heras Quir\'os
 
 \end{center}
 
 \vspace{1cm}
-La defensa del presente Proyecto Fin de Carrera se realizó el día \qquad$\;\,$ de \qquad\qquad\qquad\qquad \newline de 20XX, siendo calificada por el siguiente tribunal:
+La defensa del presente Proyecto Fin de Carrera se realiz\'o el d\'ia \qquad$\;\,$ de \qquad\qquad\qquad\qquad \newline de 2018, siendo calificada por el siguiente tribunal:
 
 
 \vspace{0.5cm}
@@ -127,300 +128,397 @@ La defensa del presente Proyecto Fin de Carrera se realizó el día \qquad$\;\,$ d
 
 
 \vspace{1.2cm}
-y habiendo obtenido la siguiente calificación:
+y habiendo obtenido la siguiente calificaci\'on:
 
 \vspace{1cm}
-\textbf{Calificación:}
+\textbf{Calificaci\'on:}
 
 
 \vspace{1cm}
 \begin{flushright}
-Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 20XX
-\end{flushright}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Dedicatoria
-
-\chapter*{}
-\pagenumbering{Roman} % para comenzar la numeracion de paginas en numeros romanos
-\begin{flushright}
-\textit{Dedicado a \\
-mi familia / mi abuelo / mi abuela}
+Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 2018
 \end{flushright}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Agradecimientos
 
 \chapter*{Agradecimientos}
-%\addcontentsline{toc}{chapter}{Agradecimientos} % si queremos que aparezca en el índice
-\markboth{AGRADECIMIENTOS}{AGRADECIMIENTOS} % encabezado 
+\markboth{AGRADECIMIENTOS}{AGRADECIMIENTOS}
 
-Aquí vienen los agradecimientos\ldots Aunque está bien acordarse de la pareja, no hay que olvidarse de dar las gracias a tu madre, que aunque a veces no lo parezca disfrutará tanto de tus logros como tú\ldots 
-Además, la pareja quizás no sea para siempre, pero tu madre sí.
+Primero de todo, me gustar\'ia agradecer a mi familia y especialmente a mis padres por su apoyo y comprensión.
+
+Adem\'as, me gustar\'ia darles las gracias a mis amigos por sus \'animos.
+
+Por supuesto, también quiero agradecer a Pedro de Las Heras Quir\'os, por su tiempo, su paciencia y su esfuerzo para ayudarme a completar este proyecto.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen
 
 \chapter*{Resumen}
-%\addcontentsline{toc}{chapter}{Resumen} % si queremos que aparezca en el índice
-\markboth{RESUMEN}{RESUMEN} % encabezado
+\markboth{RESUMEN}{RESUMEN}
 
-Aquí viene un resumen del proyecto. Ha de constar de tres o cuatro párrafos, donde se presente de manera clara y concisa de qué va el proyecto. 
-Han de quedar respondidas las siguientes preguntas:
+En la actualidad la poca información y la falta de experiencia hace que resulte complicado la elección de un puesto de trabajo, esto se acentúa más si se disponen de pocas ofertas y sobre todo por el sistema actual de becarios como entrada en el mundo laboral. Además, una vez se está asentado en una empresa es fácil desconocer la actualidad del mercado que nos rodea, el cual ha podido mejorar y cuáles son las empresas que mejor valoran las aptitudes, los conocimientos y la experiencia de la que se disponga.
 
-\begin{itemize}
-  \item ¿De qué va este proyecto? ¿Cuál es su objetivo principal?
-  \item ¿Cómo se ha realizado? ¿Qué tecnologías están involucradas?
-  \item ¿En qué contexto se ha realizado el proyecto? ¿Es un proyecto
-dentro de un marco general?
-\end{itemize}
+En este proyecto se pretende realizar una aplicación que permita a los usuarios compartir información que les ayude a elegir su futuro trabajo y a evaluar el actual. Debido al carácter delicado de los datos su manejo se realiza cifrado y los usuarios son los que deciden que información comparten de forma pública, o incluso mantenerse en el anonimato mostrando únicamente su sueldo bruto. Los usuarios contactan entre ellos y entablan una negociación mediante la que solicitan un intercambio de datos.
 
-Lo mejor es escribir el resumen al final.
+En este trabajo fin de grado se ha seguido una metodología basada en desarrollo ágil. En el desarrollo de la aplicación se ha ido incrementando la funcionalidad mediante ciclos iterativos hasta cumplir con los objetivos generales y los requisitos específicos que se iban planteando durante su elaboración.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Resumen en inglés
+Para el desarrollo se han aplicado tecnologías y herramientas como Pencil, Android Studio, Java, PostgreSQL, Git, GitHub y Eclipse. Además, para la parte del servidor se ha utilizado Travis CI y el sistema de hosting de Heroku, permitiendo una integración continua del código mediante la automatización de Travis CI para validar, compilar los cambios subidos en GitHub y posteriormente desplegar el servidor actualizado en Heroku.
 
-\chapter*{Summary}
-%\addcontentsline{toc}{chapter}{Summary} % si queremos que aparezca en el índice
-\markboth{SUMMARY}{SUMMARY} % encabezado
-
-Here comes a translation of the ``Resumen'' into English. Please, double check it for correct grammar and spelling.
-As it is the translation of the ``Resumen'', which is supposed to be written at the end, this as well should be filled out
-just before submitting.
+Los resultados obtenidos ofrecen una valoración positiva de la aplicación, por su funcionalidad, su interfaz intuitiva y el cumplimiento de los objetivos.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ÍNDICES %
+% INDICES %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Las buenas noticias es que los índices se generan automáticamente.
-% Lo único que tienes que hacer es elegir cuáles quieren que se generen,
-% y comentar/descomentar esa instrucción de LaTeX.
-
-%%%% Índice de contenidos
 \tableofcontents 
-%%%% Índice de figuras
 \cleardoublepage
-%\addcontentsline{toc}{chapter}{Lista de figuras} % para que aparezca en el indice de contenidos
-\listoffigures % indice de figuras
-%%%% Índice de tablas
-%\cleardoublepage
-%\addcontentsline{toc}{chapter}{Lista de tablas} % para que aparezca en el indice de contenidos
-%\listoftables % indice de tablas
+\listoffigures 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% INTRODUCCIÓN %
+% INTRODUCCION %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
-\chapter{Introducción}
-\label{sec:intro} % etiqueta para poder referenciar luego en el texto con ~\ref{sec:intro}
-\pagenumbering{arabic} % para empezar la numeración de página con números
+\chapter{Introducci\'on}
+\label{sec:intro}
+\pagenumbering{arabic}
 
-En este capítulo se introduce el proyeto. Debería tener información general sobre el mismo, dando la información sobre el contexto en el que se ha desarrollado.
+Este Trabajo Fin de Grado se desarrolla en el \'ambito de las aplicaciones m\'oviles, concretamente en Android. En este cap\'itulo introduciremos  los conceptos b\'asicos, las tecnolog\'ias y las herramientas utilizadas.
 
-No te olvides de echarle un ojo a la página con los cinco errores de escritura más frecuentes\footnote{\url{http://www.tallerdeescritores.com/errores-de-escritura-frecuentes}}.
-
-Aconsejo a todo el mundo que mire y se inspire en memorias pasadas. Las mías están todas almacenadas en mi web del GSyC\footnote{\url{https://gsyc.urjc.es/~grex/pfcs/}}.
-
-\section{Sección}
+\section{Aplicaciones m\'oviles}
 \label{sec:seccion}
 
-Esto es una sección, que es una estructura menor que un capítulo. 
+Las aplicaciones permiten al usuario realizar funciones muy concretas y de cualquier tipo, facilitando las gestiones o actividades a desarrollar.
 
-Por cierto, a veces me comentáis que no os compila por las tildes.
-Eso es un problema de codificación.
-Cambiad de ``UTF-8'' a ``ISO-Latin-1'' (o vicecersa) y funcionará.
+Actualmente los dispositivos móviles se han convertido en uno de los principales medios de conexión a la red, siendo una alternativa a las formas tradicionales. Además debido a su fácil acceso, disponibilidad, rapidez y manejo hace que el potencial y el uso de las aplicaciones móviles sea muy alto.
 
-\subsection{Estilo}
-\label{subsec:estilo}
+\section{Tecnologías y Herramientas}
+\label{sec:seccion}
 
-Recomiendo leer los consejos prácticos sobre LaTeX de Diomidos 
-Spinellis\footnote{\url{https://github.com/dspinellis/latex-advice}}.
+Entran en este \'ambito todas aquellas herramientas y tecnolog\'ias m\'as relevantes usadas en el Trabajo Fin de Grado.
 
-Sobre el uso de las comas\footnote{\url{http://narrativabreve.com/2015/02/opiniones-de-un-corrector-de-estilo-11-recetas-para-escribir-correctamente-la-coma.html}}
+\subsection{Pencil}
+\label{subsec:pencil}
 
-A continuación, viene una figura, la Figura~\ref{figura:foro_hilos}. 
-Observarás que el texto dentro del a referencia es el identificador de la figura (que se corresponden con el ``label'' dentro de la misma). 
-También habrás tomado nota de cómo se ponen las ``comillas dobles'' para que se muestren correctamente. 
-Volviendo a las referencias, nota que al compilar, la primera vez se crea un diccionario con las referencias, y en la segunda compilación se ``rellenan'' estas referencias. 
-Por eso hay que compilar dos veces.
+Herramienta de código abierto para la creación de prototipos de interfaz gráfica de usuario (GUI)~\cite{gui}, Pencil~\cite{pencil} permite crear maquetas de sitios web y aplicaciones sin hacer uso de lenguajes de programación.
 
- \begin{figure}
-    \centering
-    \includegraphics[bb=0 0 800 600, width=12cm, keepaspectratio]{img/foro1}
-    \caption{Página con enlaces a hilos}
-    \label{figura:foro_hilos}
- \end{figure}
+\subsection{Android Studio}
+\label{subsec:android_studio}
 
-{\footnotesize
-\begin{verbatim}
-    From gaurav at gold-solutions.co.uk  Fri Jan 14 14:51:11 2005
-    From: gaurav at gold-solutions.co.uk (gaurav_gold)
-    Date: Fri Jan 14 19:25:51 2005
-    Subject: [Mailman-Users] mailman issues
-    Message-ID: <003c01c4fa40$1d99b4c0$94592252@gaurav7klgnyif>
+Desarrollado por Google~\cite{google}, Android Studio~\cite{android_studio} es el entorno de desarrollo integrado (IDE) oficial para la plataforma Android~\cite{android} y est\'a basado en IntelliJ IDEA~\cite{intellij_idea}.
+Permite crear y emular las apps en tiempo real para todos los dispositivos de Android, además se pueden ejecutar directamente desde el m\'ovil.
+Tiene herramientas completas de edición, depuración, pruebas y perfilamiento de códigos.
 
-    Dear Sir/Madam,
-    How can people reply to the mailing list?  How do i turn off
-    this feature? How can i also enable a feature where if someone
-    replies the newsletter the email gets deleted?
-    Thanks
+\subsection{Eclipse}
+\label{subsec:eclipse}
 
-    From msapiro at value.net  Fri Jan 14 19:48:51 2005
-    From: msapiro at value.net (Mark Sapiro)
-    Date: Fri Jan 14 19:49:04 2005
-    Subject: [Mailman-Users] mailman issues
-    In-Reply-To: <003c01c4fa40$1d99b4c0$94592252@gaurav7klgnyif>
-    Message-ID: <PC173020050114104851057801b04d55@msapiro>
+Desarrollado originalmente por IBM~\cite{ibm} y actualmente por la Fundaci\'on Eclipse, Eclipse~\cite{eclipse} es una plataforma de software compuesto por un conjunto de herramientas de programaci\'on de c\'odigo abierto multiplataforma. Esta plataforma, t\'ipicamente ha sido usada para desarrollar entornos de desarrollo integrados, como el IDE de Java llamado Java Development Kit (JDK) y el compilador (ECJ) que son parte de Eclipse.
 
-    gaurav_gold wrote:
-    >How can people reply to the mailing list?  How do i turn off
-    this feature? How can i also enable a feature where if someone
-    replies the newsletter the email gets deleted?
+Java Development Kit (JDK) es un software que provee herramientas de desarrollo para la creaci\'on de programas en Java.
 
-    See the FAQ
-    >Mailman FAQ: http://www.python.org/cgi-bin/faqw-mm.py
-    article 3.11
-\end{verbatim}
-}
+\subsection{Java}
+\label{subsec:java}
+
+Desarrollado originalmente por James Gosling~\cite{james_gosling}, Java es un lenguaje de programaci\'on de prop\'osito general, concurrente, orientado a objetos y fuertemente tipado. Usado principalmente para aplicaciones de cliente-servidor.
+
+\subsection{PostgreSQL}
+\label{subsec:postgresql}
+
+PostgreSQL~\cite{postgresql} es un sistema de gesti\'on de bases de datos relacional orientado a objetos y libre.
+
+\subsection{Git}
+\label{subsec:git}
+
+Dise\~{n}ado por Linus Torvalds~\cite{linus_torvalds}, Git~\cite{git} es un software de control de versiones, pensando en la eficiencia y la confiabilidad del mantenimiento de versiones de aplicaciones cuando \'estas tienen un gran n\'umero de archivos de c\'odigo fuente. Su prop\'osito es llevar registro de los cambios en archivos de computadora y coordinar el trabajo que varias personas realizan sobre archivos compartidos.
+
+\subsection{GitHub}
+\label{subsec:github}
+
+GitHub~\cite{github}  es una plataforma de desarrollo colaborativo para alojar proyectos utilizando el sistema de control de versiones Git. Se utiliza principalmente para la creaci\'on de código fuente de programas de computadora. El software que opera GitHub fue escrito en Ruby on Rails~\cite{ruby_on_rails}.
+
+\subsection{Travis CI}
+\label{subsec:travis_ci}
+
+Travis CI~\cite{travis_ci} es un servicio de integraci\'on continua alojado y distribuido utilizado para crear y probar proyectos de software alojados en GitHub .
+Se configura agregando un archivo llamado .travis.yml, que es un archivo de texto en formato YAML~\cite{yaml}, al directorio ra\'iz del repositorio.
+Cuando se ha activado Travis CI para un repositorio dado, GitHub le notificar\'a cada vez que se actualice el contenido de ese repositorio o se env\'ie una solicitud de extracci\'on. Cuando Travis CI recibe las notificaciones de GitHub ejecutar\'a los comandos especificados en .travis.yml, que generalmente crean el software y ejecutan cualquier prueba automatizada.
+
+\subsection{Heroku}
+\label{subsec:heroku}
+
+Heroku~\cite{heroku} es una plataforma como servicio (PaaS) que ofrece servicios de computaci\'on a trav\'es de la red y que soporta distintos lenguajes de programaci\'on.
 
 \section{Estructura de la memoria}
-\label{sec:estructura}
+\label{sec:estructura_memoria}
 
-En esta sección se debería introducir la esctura de la memoria. Así:
+Los contenidos y la organizaci\'on de la información en esta memoria es la siguiente:
 
 \begin{itemize}
-  \item En el primer capítulo se hace una intro al proyecto.
-  
-  \item En el capítulo~\ref{chap:objetivos} (ojo, otra referencia automática) se muestran los objetivos del proyecto.
-  
-  \item A continuación se presenta el estado del arte.
-  
-  \item \ldots
+  \item \textbf{Cap\'itulo 2:} en este cap\'itulo se presentan las motivaciones de realizar este proyecto, los objetivos y los requisitos del mismo.
+  \item \textbf{Cap\'itulo 3:} en este cap\'itulo se describe la metodolog\'ia utilizada y se muestra d\'onde se puede acceder a todo el software de la aplicaci\'on
+  \item \textbf{Cap\'itulo 4:} en este cap\'itulo se detalla el proceso de dise\~{n}o y desarrollo de la aplicaci\'on. Se ha organizado en funci\'on de las distintas pantallas.
+  \item \textbf{Cap\'itulo 5:} en este cap\'itulo se analizan los resultados obtenidos una vez finalizado el proyecto.
+  \item \textbf{Ap\'endices:} este apartado sirve de apoyo para el seguimiento de esta memoria.
 \end{itemize}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % OBJETIVOS %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\cleardoublepage % empezamos en página impar
-\chapter{Objetivos} % título del capítulo (se muestra)
-\label{chap:objetivos} % identificador del capítulo (no se muestra, es para poder referenciarlo)
+\cleardoublepage 
+\chapter{Motivaci\'on y objetivos} 
+\label{chap:motivacion_objetivos}
 
-\section{Objetivo general} % título de sección (se muestra)
-\label{sec:objetivo-general} % identificador de sección (no se muestra, es para poder referenciarla)
+En este cap\'itulo se exponen los problemas que motivan la realizaci\'on de este proyecto, los objetivos generales y los requisitos que han condicionado su desarrollo.
 
-Aquí vendría el objetivo general en una frase:
-Mi trabajo fin de grado consiste en crear de una herramienta de análisis de los comentarios jocosos en repositorios de software libre alojados en la plataforma GitHub.
+\section{Motivaci\'on}
+\label{sec:motivacion} 
 
-Recuerda que los objetivos siempre vienen en infinitivo.
+En la actualidad existen distintas aplicaciones y p\'aginas web que permiten conocer informaci\'on del mercado laboral. En aplicaciones como Indeed~\cite{indeed}, LinkedIn~\cite{linkedin}, Infojobs~\cite{infojobs}, CornerJob~\cite{cornerjob} y Jobtoday~\cite{job_today} puedes buscar ofertas de trabajo y en algunas también mostrar tus datos a forma de Curr\'iculum p\'ublico. Por otro lado sitios web como TuSalario.es~\cite{tusalario}, OCCMundial.com~\cite{occmundial} y Hays.es~\cite{hays} puedes obtener informaci\'on orientativa para tu trabajo seg\'un los datos insertados.
 
+Sin embargo no existe una red que permita obtener datos sobre sueldos y trabajos de primera mano, y menos aún de forma an\'onima y segura, en la que \'unicamente se compartan la informaci\'on que uno quiera y exclusivamente con la persona con quien quiera intercambiar dichos datos.
 
-\section{Objetivos específicos}
-\label{sec:objetivos-especificos}
+Dentro del departamento de Sistemas Telemáticos y Computación (GSyC)~\cite{gsyc} de la Universidad Rey Juan Carlos~\cite{urjc} se pretendía dar una herramienta a los alumnos con la que puedan conocer mejor el mercado laboral que les espera al finalizar los estudios y que les ayude en la elecci\'on de un trabajo.
 
-Los objetivos específicos se pueden entender como las tareas en las que se ha desglosado el objetivo general.
-Y, sí, también vienen en infinitivo.
+De esta necesidad surge la motivaci\'on de crear una aplicaci\'on m\'ovil Android que cumpla dichos requisitos, FairWage~\cite{fairwage}.
 
+\section{Objetivos generales}
+\label{sec:objetivo-general} 
 
-\section{Planificación temporal}
-\label{sec:planificacion-temporal}
+Como resultado del an\'alisis de la motivaci\'on descrita, se pueden extraer una serie de objetivos generales que deben de cumplirse en la implementaci\'on de este proyecto. Estos objetivos son:
 
-A mí me gusta que aquí pongáis una descripción de lo que os ha llevado realizar el trabajo.
-Hay gente que añade un diagrama de GANTT.
-Lo importante es que quede claro cuánto tiempo llevas (tiempo natural, p.ej., 6 meses) y a qué nivel de esfuerzo (p.ej., principalmente los fines de semana).
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ESTADO DEL ARTE %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\cleardoublepage
-\chapter{Estado del arte}
-
-Descripción de las tecnologías que utilizas en tu trabajo. 
-Con dos o tres párrafos por cada tecnología, vale. 
-Se supone que aquí viene todo lo que no has hecho tú.
-
-Puedes citar libros, como el de Bonabeau et al. sobre procesos estigmérgicos~\cite{bonabeau:_swarm}. % Nota que el ~ añade un espacio en blanco, pero no deja que exista un salto de línea. Imprescindible ponerlo para las citas.
-
-También existe la posibilidad de poner notas al pie de página, por ejemplo, una para indicarte que visite la página de LibreSoft\footnote{\url{http://www.libresoft.es}}.
-
-\section{Sección 1} 
-\label{sec:seccion1}
-
-Hemos hablado de cómo incluir figuras.
-Pero no hemos dicho nada de tablas.
-A mí me gustan las tablas.
-Mucho.
-Aquí un ejemplo de tabla, la Tabla~\ref{tabla:ejemplo}.
-
-\begin{table}
- \begin{center}
-  \begin{tabular}{ | l | c | r |} % tenemos tres colummnas, la primera alineada a la izquierda (l), la segunda al centro (c) y la tercera a la derecha (r). El | indica que entre las columnas habrá una línea separadora.
-    \hline
-    1 & 2 & 3 \\ \hline % el hline nos da una línea vertical
-    4 & 5 & 6 \\ \hline
-    7 & 8 & 9 \\
-    \hline
-  \end{tabular}
-  \label{tabla:ejemplo}
-  \caption{Ejemplo de tabla}
- \end{center}
-\end{table}
+\begin{enumerate}
+  \item Desarrollar una aplicaci\'on funcional que permita intercambiar informaci\'on entre usuarios en tiempo real.
+  \item Garantizar la confidencialidad y la seguridad de los datos ingresados por los usuarios y su intercambio.
+  \item Desarrollar un servidor mínimo, que guarde la menor cantidad de datos el menor tiempo posible.
+  \item Proporcionar una interfaz sencilla e intuitiva para facilitar su manejo.
+  \item Asegurar fluidez y optimizaci\'on en la aplicaci\'on.
+\end{enumerate}
 
 
+\section{Especificación de requisitos}
+\label{sec:especificacion-requisitos}
+
+\begin{enumerate}
+  \item Proporcionar una interfaz de registro con la que el usuario pueda darse de alta en la aplicaci\'on.
+  \item Autenticar a los usuarios para poder acceder a la funcionalidad de la aplicaci\'on.
+  \item Dar al usuario la posibilidad de rellenar y editar su perfil informaci\'on, as\'i como elegir cu\'ales de esos datos son de dominio público y cuáles son privados. El único campo que siempre será público es el sueldo bruto.
+  \item Mostrar al usuario los datos de su perfil y la posibilidad de borrar al mismo dándose de baja en la aplicación.
+  \item Poder enviar solicitudes a otros usuarios para intercambiar información, una vez enviadas se debe poder cancelar y eliminar dicha solicitud.
+  \item Poder elegir concretamente que datos son los que quiero obtener de otro usuario y cuales son los que le ofrezco.
+  \item Poder aceptar, rechazar o mandar una contraoferta de las solicitudes recibidas por otros usuarios.
+  \item Almacenar y mostrar una lista con todos los datos recibidos de otros usuarios, dando la posibilidad de ser borrados de manera individual.
+  \item Almacenar y mostrar una lista con todas las solicitudes, tanto las enviadas como las recibidas, así como el estado en el que se encuentran en ese momento.
+  \item Hacer uso de claves públicas y privadas para cifrar los datos enviados de forma que únicamente el destinatario pueda descifrar dicha información.
+  \item Garantizar la privacidad del usuario, para ello el servidor aparte del nombre del usuario no conocerá ningún dato que no sea público.
+  \item Otorgar la posibilidad de actualizar de manera manual los listados de solicitudes y de contactos.
+  \item Notificar al cliente si hay novedades en las solicitudes o los contactos.
+\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% DISEÑO E IMPLEMENTACIÓN %
+% ASPECTOS DEL DESARROLLO %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
-\chapter{Diseño e implementación}
+\chapter{Aspectos del desarrollo}
+\label{sec:aspectos_desarrollo} 
 
-Aquí viene todo lo que has hecho tú (tecnológicamente). 
-Puedes entrar hasta el detalle. 
-Es la parte más importante de la memoria, porque describe lo que has hecho tú.
-Eso sí, normalmente aconsejo no poner código, sino diagramas.
+En este capítulo se expone la metodología utilizada para realizar el proyecto y la ubicacción del software del mismo.
+
+\section{Metodología}
+\label{metodologia} 
+
+En este Trabajo Fin de Grado se ha realizado una fase inicial que consiste en:
+
+\begin{itemize}
+  \item \textbf{Consolidación, búsqueda y aprendizaje:} se establecen los objetivos generales de la aplicación, la búsqueda de las herramientas necesarias para realizarla y su aprendizaje.
+  \item \textbf{Prototipado:} se elabora un diseño básico de la aplicación móvil usando la herramienta Pencil.
+  \item \textbf{Configuración:} se prepara la configuración del servidor para que los cambios publicados en el repositorio de Github sean automáticamente validados y compilados por Travis y enviados a Heroku, que es el encargado de ejecutar el servidor.
+\end{itemize}
+
+ Posteriormente durante la elaboración del proyecto se realizó una metodología de desarrollo ágil en la cual mediante ciclos iterativos se incrementaba la funcionalidad del software. 
+
+El desarrollo ágil de software envuelve un enfoque para la toma de decisiones en los proyectos de software, que se refiere a métodos de ingeniería del software basados en el desarrollo iterativo e incremental, donde los requisitos y soluciones evolucionan con el tiempo según la necesidad del proyecto.
+Los métodos ágiles enfatizan las comunicaciones cara a cara en vez de la documentación. 
+
+El objetivo de cada iteración es agregar sofware sin errores, cada iteración en el ciclo de desarrollo ha incluido:
+
+\begin{itemize}
+  \item \textbf{Planificación:} se establecen los requisitos específicos prioritarios los cuales pueden cambiar o incluso a\~{n}adirse nuevos según se va desarrollando la aplicación.
+  \item \textbf{Análisis de requisitos:} se recogen las mejoras y funcionalidades que se pueden a\~{n}adir en los requisitos cumplidos y los que quedan pendientes. Se procede según las prioridades decididas en la fase de planificación.
+  \item \textbf{Diseño:} se elabora una arquitectura similar a la propuesta en el prototipado para implementar los requisitos o las mejoras.
+  \item \textbf{Codificación:} desarrollo de las funcionalidades pertinentes.
+  \item \textbf{Pruebas:} comprobar que el diseño y la codificación cumplen con los requisitos acordados y se evalúa el resultado para posibles mejoras.
+  \item \textbf{Documentación:} se anotan los requisitos implementados y el proceso realizado para conseguirlo, se anotan posibles mejoras que pueden ser introducidas posteriormente.
+  \item \textbf{Integración:} se publican los cambios realizados en la aplicación en los repositorios de GitHub.
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth, keepaspectratio]{img/esquema_metodologia_agil}
+  \caption{Estructura metodología ágil}
+  \label{fig:esquema_metodologia_agil}
+\end{figure}
+
+\section{Acceso al software del proyecto}
+\label{acceso_software_proyecto}
+
+ El código fuente de la aplicación está disponible en un repositorio público de Github~\cite{fairwage}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ARQUITECTURA Y DESARROLLO DE LA APLICACION %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+\chapter{Arquitectura y desarrollo de la aplicación}
+\label{sec:arquitectura_desarrollo_aplicacion} 
+
+En este capítulo se expone detalladamente la arquitectura y la implementación de la aplicación, esta se encuentra dividida en dos partes, el lado del cliente y el del servidor.
 
 \section{Arquitectura general} 
 \label{sec:arquitectura}
 
-Si tu proyecto es un software, siempre es bueno poner la arquitectura (que es cómo se estructura tu programa a ``vista de pájaro'').
+\subsection{Diagrama navegación aplicación cliente}
+\label{subsec:diagrama_aplicacion_cliente}
 
-Por ejemplo, puedes verlo en la figura~\ref{fig:arquitectura}.
+\subsection{Diagrama relación cliente-servidor}
+\label{subsec:diagrama_cliente_servidor}
 
-\begin{figure}
+\subsection{Diagrama base de datos cliente}
+\label{subsec:diagrama_base_datos_cliente}
+
+\subsection{Diagrama base de datos servidor}
+\label{subsec:diagrama_base_datos_servidor}
+
+\section{Apartados de la aplicación} 
+\label{sec:apartados_aplicacion}
+
+A continuación se detallarán las diferentes pantallas que tiene la aplicación y se mostrará una imagen del prototipo correspondiente para una mejor visualización.
+
+\subsection{Pantalla de inicio de sesión}
+\label{subsec:pantalla_inicio_sesion}
+
+\begin{figure}[H]
   \centering
-  \includegraphics[width=9cm, keepaspectratio]{img/arquitectura}
-  \caption{Estructura del parser básico}
-  \label{fig:arquitectura}
+  \includegraphics[height=10cm, keepaspectratio]{img/login}
+  \caption{Pantalla de inicio de sesión}
+  \label{fig:login}
 \end{figure}
 
-Si utilizas una base de datos, no te olvides de incluir también un diagrama de entidad-relación.
+El propósito de esta pantalla es la autenticación de los usuarios. Está compuesta por:
 
+\begin{enumerate}
+  \item Un campo para introducir el nombre del usuario.
+  \item Un campo para introducir la contraseña del usuario.
+  \item Un apartado para ir a la pantalla de registro.
+  \item Un botón para comprobar que el usuario está registrado en el servidor y que los datos son correctos.
+  \item Un botón para salirse de la aplicación.
+\end{enumerate}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% RESULTADOS %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Cuando se pulsa el botón de enviar se comprueba que ningún campo esté vacío, si alguno lo está, será marcado y se informa al usuario que tiene que rellenarlo.
+Posteriormente se comprueba que el usuario está registrado en el servidor y de forma local que la autenticación es correcta, en caso de no serla, se avisa al usuario de que los datos son erróneos.
+Si la autenticación se realiza con éxito se inicia la pantalla de búsqueda.
 
-\cleardoublepage
-\chapter{Resultados}
+\subsection{Pantalla de registro}
+\label{subsec:pantalla_registro}
 
-En este capítulo se incluyen los resultados de tu trabajo fin de grado.
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=10cm, keepaspectratio]{img/register}
+  \caption{Pantalla de registro}
+  \label{fig:register}
+\end{figure}
 
-Si es una herramienta de análisis lo que has realizado, aquí puedes poner ejemplos de haberla utilizado para que se vea su utilidad.
+El propósito de esta pantalla es dar de alta a los usuarios nuevos de la aplicación. Está compuesta por:
 
+\begin{itemize}
+  \item Un campo para introducir el nombre del usuario.
+  \item Un campo para introducir la contraseña del usuario.
+  \item Un campo para introducir el sueldo bruto.
+  \item Un apartado para ir a la pantalla de inicio de sesión.
+  \item Un botón para realizar el alta del usuario en el servidor en caso de que los datos introducidos sean correctos y el nombre de usuario esté disponible.
+  \item Un botón para salirse de la aplicación.
+\end{itemize}
+
+Cuando se pulsa el botón de enviar se comprueba que ningún campo esté vacío, si alguno lo está, será marcado y se informa al usuario que tiene que rellenarlo.
+Posteriormente se envía el nombre de usuario al servidor el cual comprueba que esté disponible, en caso de que se esté utilizando en otro dispositivo se informa de que el nombre elegido no es válido. Si es válido el servidor guarda tanto el nombre de usuario como el sueldo bruto, que fueron previamente enviados juntos.
+Si el registro se realiza con éxito se guardará de forma local los datos del usuario y se inicia la pantalla de búsqueda.
+
+\subsection{Pantalla de búsqueda}
+\label{subsec:pantalla_busqueda}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=10cm, keepaspectratio]{img/search}
+  \caption{Pantalla de búsqueda}
+  \label{fig:search}
+\end{figure}
+
+El propósito de esta pantalla es ofrecer una interfaz mediante la cual puedan realizarse búsquedas de sueldos brutos de otros usuarios, además se pueden introducir ciertos parámetros para acotar los resultados obtenidos. Está compuesta por:
+
+\begin{itemize}
+  \item Un botón para ir a la pantalla del perfil del usuario.
+  \item Un botón para ir a la pantalla de edición del perfil del usuario.
+  \item Un botón para ir al listado de contactos guardados.
+  \item Un botón para ir al listado de solicitudes, tanto las enviadas como las recibidas.
+  \item Un campo para introducir el sueldo bruto mínimo buscado.
+  \item Un campo para introducir el trabajo buscado.
+  \item Dos campos para introducir los sectores del empleo buscado.
+  \item Un apartado para añadir conocimientos variados.
+  \item Un botón para realizar la búsqueda en el servidor de los perfiles que encajen con los parámetros que se hayan proporcionado.
+  \item Un botón para desconectar al usuario actual e ir a la pantalla de inicio de sesión.
+\end{itemize}
+
+Cuando se pulsa el botón de busca se inicia la pantalla del listado de contactos.
+
+\subsection{Pantalla de listado de contactos}
+\label{subsec:pantalla_listado_contactos}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=10cm, keepaspectratio]{img/searchresponse}
+  \caption{Pantalla de listado de contactos}
+  \label{fig:searchresponse}
+\end{figure}
+
+El propósito de esta pantalla es mostrar un listado de los contactos según os parámetros introducidos en la pantalla de búsqueda. Cada contacto se divide en filas y cada fila está compuesta por:
+
+\begin{itemize}
+  \item El trabajo del contacto, no aparecerá nada en caso de que este campo no sea público.
+  \item El sueldo bruto del contacto.
+  \item Los sectores del contacto, si alguno no es público no aparecerá.
+\end{itemize}
+
+Inicialmente los parámetros introducidos en la pantalla de búsqueda son enviados al servidor que devuelve los contactos correspondientes. Si no se ha rellenado ningún campo se muestran todos los perfiles existentes, de lo contrario únicamente se muestran aquellos contactos que coinciden al menos con uno de los parámetros.
+
+Cuando se pulsa en un contacto en concreto se inicia la pantalla del perfil del contacto.
+
+\subsection{Pantalla del perfil del contacto}
+\label{subsec:pantalla_perfil_contacto}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=10cm, keepaspectratio]{img/profilerequest}
+  \caption{Pantalla del perfil del contacto}
+  \label{fig:profilerequest}
+\end{figure}
+
+El propósito de esta pantalla es mostrar la información pública de un contacto, así como dar la posibilidad de enviar una solicitud en la que se pedirán nuevos datos. Está compuesta por:
+
+\begin{itemize}
+  \item Los campos públicos de un contacto
+  \item Un botón para enviar una solicitud de negociación a dicho contacto.
+\end{itemize}
+
+Cuando se pulsa el botón enviar negociación se inicia la pantalla de negociación. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -431,55 +529,40 @@ Si es una herramienta de análisis lo que has realizado, aquí puedes poner ejempl
 \chapter{Conclusiones}
 \label{chap:conclusiones}
 
+En este capítulo se exponen las conclusiones a las que se han llegado tras haber realizado el proyecto y posibles mejoras que se pueden desarrollar en la aplicación en el futuro.
 
 \section{Consecución de objetivos}
 \label{sec:consecucion-objetivos}
 
-Esta sección es la sección espejo de las dos primeras del capítulo de objetivos, donde se planteaba el objetivo general y se elaboraban los específicos.
+Se ha desarrollado una plataforma que permite a un usuario poder evaluar salarialmente el trabajo que se desempeña actualmente o de ofertas de trabajo que posea. Para ello se hace uso de un intercambio de información de primera mano con otros usuarios del mismo mercado laboral.
 
-Es aquí donde hay que debatir qué se ha conseguido y qué no. 
-Cuando algo no se ha conseguido, se ha de justificar, en términos de qué problemas se han encontrado y qué medidas se han tomado para mitigar esos problemas.
+Se ha salvaguardado la integridad, la confidencialidad y la disponibilidad de los datos de los usuarios.
 
+Sin embargo, dentro de los objetivos propuesto no se ha conseguido un intercambio de información en tiempo real. Se ha desarrollado un sistema de notificaciones con tecnología pull, en la cual la aplicación cliente pide al servidor de forma periódica actualizaciones. Además, se ha ofrecido la posibilidad de pedir manualmente dichas actualizaciones de manera ortogonal a las automáticas. Para solventar completamente este objetivo una posible solución sería implementar notificaciones push, esta se encuentra planteada en la sección trabajos futuros.
 
-\section{Aplicación de lo aprendido}
-\label{sec:aplicacion}
-
-Aquí viene lo que has aprendido durante el Grado/Máster y que has aplicado en el TFG/TFM. Una buena idea es poner las asignaturas más relacionadas y comentar en un párrafo los conocimientos y habilidades puestos en práctica.
-
-\begin{enumerate}
-  \item a
-  \item b
-\end{enumerate}
-
-
-\section{Lecciones aprendidas}
-\label{sec:lecciones_aprendidas}
-
-Aquí viene lo que has aprendido en el Trabajo Fin de Grado/Máster.
-
-\begin{enumerate}
-  \item a
-  \item b
-\end{enumerate}
-
+Con los resultados obtenidos del presente trabajo se puede concluir que la aplicación cubre los problemas y las motivaciones planteadas.
 
 \section{Trabajos futuros}
 \label{sec:trabajos_futuros}
 
-Ningún software se termina, así que aquí vienen ideas y funcionalidades que estaría bien tener implementadas en el futuro.
+Una vez finalizado el Trabajo Fin de Grado se consideran las siguientes ideas y funcionalidades que pueden ser implementadas en  el futuro:
 
-Es un apartado que sirve para dar ideas de cara a futuros TFGs/TFMs.
-
+\begin{itemize}
+  \item Cambiar el sistema actual pull por las notificaciones push.
+  \item Realizar la aplicación cliente en un sistema híbrido para permitir su acceso a usuarios que no sean Android.
+  \item Realizar algún método de importación y exportación de usuarios, de forma que un mismo usuario pueda tener la aplicación con sus datos en diferentes dispositivos.
+  \item Realizar algún sistema en el que se premie el buen uso y la colaboración en la aplicación, ya sea apareciendo en las listas de búsqueda mediante un ranking o alguna marca que los identifique como buenos usuarios.
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% APÉNDICE(S) %
+% APENDICE(S) %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\cleardoublepage
-\appendix
-\chapter{Manual de usuario}
-\label{app:manual}
+%\cleardoublepage
+%\appendix
+%\chapter{Manual de usuario}
+%\label{app:manual}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -491,13 +574,13 @@ Es un apartado que sirve para dar ideas de cara a futuros TFGs/TFMs.
 
 % Las siguientes dos instrucciones es todo lo que necesitas
 % para incluir las citas en la memoria
-\bibliographystyle{abbrv}
+\bibliographystyle{unsrt}
 \bibliography{memoria}  % memoria.bib es el nombre del fichero que contiene
-% las referencias bibliográficas. Abre ese fichero y mira el formato que tiene,
+% las referencias bibliogrï¿½ficas. Abre ese fichero y mira el formato que tiene,
 % que se conoce como BibTeX. Hay muchos sitios que exportan referencias en
 % formato BibTeX. Prueba a buscar en http://scholar.google.com por referencias
-% y verás que lo puedes hacer de manera sencilla.
-% Más información: 
+% y verï¿½s que lo puedes hacer de manera sencilla.
+% Mï¿½s informaciï¿½n: 
 % http://texblog.org/2014/04/22/using-google-scholar-to-download-bibtex-citations/
 
 \end{document}
