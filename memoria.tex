@@ -28,6 +28,7 @@
 %\usepackage[dvipdfm]{graphicx}
 \usepackage{graphicx}
 \usepackage{float}  %% H para posicionar figuras
+\usepackage{multicol}
 \usepackage[nottoc, notlot, notlof, notindex]{tocbibind} %% Opciones de ï¿½ndice
 \usepackage{latexsym}  %% Logo LaTeX
 \usepackage{hyperref}
@@ -76,7 +77,7 @@ Trabajo Fin de Grado
 \vspace{2.5cm}
 
 \LARGE
-APLICACI\'ON ANDROID RED COLABORATIVA PARA OBTENER INFORMACI\'ON SOBRE TRABAJOS Y SUELDOS EN EL MERCADO LABORAL
+APLICACIÓN MÓVIL ANDROID PARA RED COLABORATIVA PARA OBTENER INFORMACIÓN SOBRE TRABAJOS Y SUELDOS EN EL MERCADO LABORAL
 
 \vspace{4cm}
 
@@ -104,7 +105,7 @@ Tutor : Pedro de Las Heras Quir\'os
 
 \vspace{1cm}
 \large
-Aplicaci\'on Android Red Colaborativa para obtener Informaci\'on sobre Trabajos y Sueldos en el Mercado Laboral
+Aplicaci\'on Móvil Android para Red Colaborativa para obtener Información sobre Trabajos y Sueldos en el Mercado Laboral
 
 \vspace{1cm}
 \large
@@ -206,6 +207,11 @@ Entran en este \'ambito todas aquellas herramientas y tecnolog\'ias m\'as releva
 \label{subsec:pencil}
 
 Herramienta de código abierto para la creación de prototipos de interfaz gráfica de usuario (GUI)~\cite{gui}, Pencil~\cite{pencil} permite crear maquetas de sitios web y aplicaciones sin hacer uso de lenguajes de programación.
+
+\subsection{Lucidchart}
+\label{subsec:lucidchart}
+
+Herramienta de diagramación web basada en la nube, Lucidchart~\cite{lucidchart} permite a los usuarios colaborar y trabajar en equipo en tiempo real. Sirve para crear diagramas, modelos, organigramas, esquemas, diseños UML~\cite{uml}, mapas y bocetos.
 
 \subsection{Android Studio}
 \label{subsec:android_studio}
@@ -370,7 +376,9 @@ El objetivo de cada iteración es agregar sofware sin errores, cada iteración en 
 \section{Acceso al software del proyecto}
 \label{acceso_software_proyecto}
 
- El código fuente de la aplicación está disponible en un repositorio público de Github~\cite{fairwage}.
+El código fuente de la aplicación está disponible en un repositorio público de Github~\cite{fairwage}.
+
+El código fuente de la memoria está disponible en un repositorio público de Github~\cite{memoria}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -386,17 +394,55 @@ En este capítulo se expone detalladamente la arquitectura y la implementación de
 \section{Arquitectura general} 
 \label{sec:arquitectura}
 
-\subsection{Diagrama navegación aplicación cliente}
-\label{subsec:diagrama_aplicacion_cliente}
+Para facilitar el seguimiento de la funcionalidad de la aplicación y dar una visión global de la misma se ha realizado un diagrama que explique las interacciones de los clientes con el servidor y otros diagramas mostrando la estructura de las bases de datos, tanto en el cliento como en el servidor.
 
 \subsection{Diagrama relación cliente-servidor}
 \label{subsec:diagrama_cliente_servidor}
 
+Las interacción entre cliente y servidor se puede dividir en cinco tipos, el más complejo que es el proceso de negociación a pesar de sus variaciones siempre sigue el mismo flujo.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth, keepaspectratio]{img/cliente-servidor}
+  \caption{Diagrama relación cliente-servidor}
+  \label{fig:cliente-servidor}
+\end{figure}
+
 \subsection{Diagrama base de datos cliente}
 \label{subsec:diagrama_base_datos_cliente}
 
+El cliente divide la estructura de su base de datos de la siguiente forma:
+
+\begin{enumerate}
+  \item \textbf{Usuarios:} aquí se guardan los datos de cada usuario, permitiendo que los cambios realizados en el perfil sean persistentes y que se puedan crear varios perfiles en una misma aplicación.
+  \item \textbf{Contactos:} aquí se guardan los datos de los contactos guardados obtenidos mediante negociaciones, permitiendo poder acceder a su información en cualquier momento.
+  \item \textbf{Negociaciones:} aquí se guardan los datos de las negociaciones, permitiendo porder realizar un seguimiento del estado de las mismas.
+\end{enumerate}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth, keepaspectratio]{img/cliente}
+  \caption{Diagrama base de datos cliente}
+  \label{fig:cliente}
+\end{figure}
+
 \subsection{Diagrama base de datos servidor}
 \label{subsec:diagrama_base_datos_servidor}
+
+El servidor divide la estructura de su base de datos de la siguiente forma:
+
+\begin{enumerate}
+  \item \textbf{Usuarios:} aquí se guardan los datos públicos de cada usuario, permitiendo dar una mayor visibilidad a la hora de que un usuario realice una búsqueda. Además se almacena su nombre de usuario para llevar un control del registro y su clave pública para poder recibir información de otros contactos de forma segura.
+  \item \textbf{Contactos:} aquí se guardan temporalmente los datos de un contacto cuando ha aceptado una negociación, esta información sera entregada al creador de la solicitud y posteriormente eliminado del servidor.
+  \item \textbf{Negociaciones:} aquí se guardan los datos de las negociaciones.
+\end{enumerate}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth, keepaspectratio]{img/servidor}
+  \caption{Diagrama base de datos servidor}
+  \label{fig:servidor}
+\end{figure}
 
 \section{Apartados de la aplicación} 
 \label{sec:apartados_aplicacion}
@@ -439,14 +485,14 @@ Si la autenticación se realiza con éxito se inicia la pantalla de búsqueda.
 
 El propósito de esta pantalla es dar de alta a los usuarios nuevos de la aplicación. Está compuesta por:
 
-\begin{itemize}
+\begin{enumerate}
   \item Un campo para introducir el nombre del usuario.
   \item Un campo para introducir la contraseña del usuario.
   \item Un campo para introducir el sueldo bruto.
   \item Un apartado para ir a la pantalla de inicio de sesión.
   \item Un botón para realizar el alta del usuario en el servidor en caso de que los datos introducidos sean correctos y el nombre de usuario esté disponible.
   \item Un botón para salirse de la aplicación.
-\end{itemize}
+\end{enumerate}
 
 Cuando se pulsa el botón de enviar se comprueba que ningún campo esté vacío, si alguno lo está, será marcado y se informa al usuario que tiene que rellenarlo.
 Posteriormente se envía el nombre de usuario al servidor el cual comprueba que esté disponible, en caso de que se esté utilizando en otro dispositivo se informa de que el nombre elegido no es válido. Si es válido el servidor guarda tanto el nombre de usuario como el sueldo bruto, que fueron previamente enviados juntos.
@@ -464,7 +510,7 @@ Si el registro se realiza con éxito se guardará de forma local los datos del usu
 
 El propósito de esta pantalla es ofrecer una interfaz mediante la cual puedan realizarse búsquedas de sueldos brutos de otros usuarios, además se pueden introducir ciertos parámetros para acotar los resultados obtenidos. Está compuesta por:
 
-\begin{itemize}
+\begin{enumerate}
   \item Un botón para ir a la pantalla del perfil del usuario.
   \item Un botón para ir a la pantalla de edición del perfil del usuario.
   \item Un botón para ir al listado de contactos guardados.
@@ -475,27 +521,27 @@ El propósito de esta pantalla es ofrecer una interfaz mediante la cual puedan re
   \item Un apartado para añadir conocimientos variados.
   \item Un botón para realizar la búsqueda en el servidor de los perfiles que encajen con los parámetros que se hayan proporcionado.
   \item Un botón para desconectar al usuario actual e ir a la pantalla de inicio de sesión.
-\end{itemize}
+\end{enumerate}
 
-Cuando se pulsa el botón de busca se inicia la pantalla del listado de contactos.
+Cuando se pulsa el botón de buscar se inicia la pantalla del listado de contactos.
 
-\subsection{Pantalla de listado de contactos}
+\subsection{Pantalla del listado de contactos}
 \label{subsec:pantalla_listado_contactos}
 
 \begin{figure}[H]
   \centering
   \includegraphics[height=10cm, keepaspectratio]{img/searchresponse}
-  \caption{Pantalla de listado de contactos}
+  \caption{Pantalla del listado de contactos}
   \label{fig:searchresponse}
 \end{figure}
 
-El propósito de esta pantalla es mostrar un listado de los contactos según os parámetros introducidos en la pantalla de búsqueda. Cada contacto se divide en filas y cada fila está compuesta por:
+El propósito de esta pantalla es mostrar un listado de los contactos según los parámetros introducidos en la pantalla de búsqueda. Cada contacto se divide en filas y cada fila está compuesta por:
 
-\begin{itemize}
+\begin{enumerate}
   \item El trabajo del contacto, no aparecerá nada en caso de que este campo no sea público.
   \item El sueldo bruto del contacto.
   \item Los sectores del contacto, si alguno no es público no aparecerá.
-\end{itemize}
+\end{enumerate}
 
 Inicialmente los parámetros introducidos en la pantalla de búsqueda son enviados al servidor que devuelve los contactos correspondientes. Si no se ha rellenado ningún campo se muestran todos los perfiles existentes, de lo contrario únicamente se muestran aquellos contactos que coinciden al menos con uno de los parámetros.
 
@@ -506,19 +552,202 @@ Cuando se pulsa en un contacto en concreto se inicia la pantalla del perfil del 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[height=10cm, keepaspectratio]{img/profilerequest}
+  \includegraphics[height=10cm, keepaspectratio]{img/contactprofile}
   \caption{Pantalla del perfil del contacto}
-  \label{fig:profilerequest}
+  \label{fig:contactprofile}
 \end{figure}
 
 El propósito de esta pantalla es mostrar la información pública de un contacto, así como dar la posibilidad de enviar una solicitud en la que se pedirán nuevos datos. Está compuesta por:
 
+\begin{enumerate}
+  \item Los campos públicos de un contacto.
+  \item Un botón para iniciar una negociación con dicho contacto.
+\end{enumerate}
+
+Cuando se pulsa el botón iniciar negociación se inicia la pantalla de negociación. 
+
+\subsection{Pantalla de envío de negociación}
+\label{subsec:pantalla_envio_negociacion}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=10cm, keepaspectratio]{img/negotationrequest}
+  \caption{Pantalla de envío de negociación}
+  \label{fig:negotationrequest}
+\end{figure}
+
+El propósito de esta pantalla es elegir los datos personales que queremos conseguir del contacto seleccionado y marcar que datos se ofrecen a cambio. Está compuesta por:
+
+\begin{enumerate}
+  \item Una columna con los diferentes campos de un usuario y un switch para indicar que datos se ofrecen.
+  \item Una columna con los diferentes campos de un usuario y un switch para indicar que datos se quieren obtener.
+  \item Un botón para enviar la solicitud de negociación a dicho contacto.
+  \item Un botón para cancelar la negociación y volver a la pantalla del perfil del contacto.
+\end{enumerate}
+
+Cuando se pulsa el botón de enviar negociación se comprueba que el usuario tenga rellenos los campos que ha ofrecido, en caso de estar alguno vacío se avisa de que debe rellenarlos para cumplimentar el envío.
+Posteriormente se envían al servidor los datos seleccionados para que este se encargue de su transmisión al otro usuario. Además, en local se añade a la lista de negociaciones la solicitud creada con sus parámetros.
+Finalmente se retorna al listado de contactos.
+
+\subsection{Pantalla del perfil del usuario}
+\label{subsec:pantalla_perfil_usuario}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=10cm, keepaspectratio]{img/profile}
+  \caption{Pantalla del perfil del usuario}
+  \label{fig:profile}
+\end{figure}
+
+El propósito de esta pantalla es mostrar los datos personales que estén rellenos así como si actualmente son públicos o privados. Está compuesta por:
+
+\begin{enumerate}
+  \item Un botón para ir a la pantalla de edición del perfil del usuario.
+  \item Un botón para ir a la pantalla de búsqueda.
+  \item Un botón para ir al listado de contactos guardados.
+  \item Un botón para ir al listado de negociaciones.
+  \item Una columna con los diferentes campos rellenos de un usuario.
+  \item Una columna con imágenes que diferencian el estado público o privado de cada campo.
+\end{enumerate}
+
+\subsection{Pantalla de edición del usuario}
+\label{subsec:pantalla_edicion_usuario}
+
+\begin{multicols}{1}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=.4\linewidth, keepaspectratio]{img/editprofile}
+    \includegraphics[width=.4\linewidth, keepaspectratio]{img/editprofile2}
+    \caption{Pantalla de edición del usuario}
+    \label{fig:editprofile}
+  \end{figure}
+\end{multicols}
+
+El propósito de esta pantalla es ofrecer una interfaz mediante la cual un usuario pueda cambiar los campos de su perfil y su correspondiente privacidad. Está compuesta por:
+
+\begin{enumerate}
+  \item Una columna con los diferentes campos con el valor actual en caso de haberse rellenado previamente.
+  \item Una columna con la configuración de privacidad actual asociada a cada campo.
+  \item Un botón para guardar los cambios.
+  \item Un botón para cancelar la edición y volver a la pantalla anterior.
+\end{enumerate}
+
+Cuando se pulsa el botón de guardar cambios se envían al servidor aquellos campos que estén marcados como públicos y se borran del servidor aquellos que se hayan cambiado a privados. Además se guarda en local los datos actualizados y se vuelve a la pantalla anterior.
+
+\subsection{Pantalla de contactos guardados}
+\label{subsec:pantalla_contactos_guardados}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=10cm, keepaspectratio]{img/searchresponse}
+  \caption{Pantalla del listado de contactos}
+  \label{fig:searchresponse}
+\end{figure}
+
+El propósito de esta pantalla es mostrar un listado de los contactos según guardados. Cada contacto se divide en filas y cada fila está compuesta por:
+
+\begin{enumerate}
+  \item El trabajo del contacto, no aparecerá nada en caso de que no se haya obtenido mediante la previa negociación.
+  \item El sueldo bruto del contacto.
+  \item Los sectores del contacto, si alguno no se ha obtenido mediante la previa negociación no aparecerá.
+\end{enumerate}
+
+Cuando se pulsa en un contacto en concreto se inicia la pantalla del perfil del contacto guardado.
+
+\subsection{Pantalla del perfil del contactos guardado}
+\label{subsec:pantalla_perfil_contactos_guardados}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=10cm, keepaspectratio]{img/profilerequest}
+  \caption{Pantalla del perfil del contacto guardado}
+  \label{fig:profilerequest}
+\end{figure}
+
+El propósito de esta pantalla es mostrar la información de un contacto guardado, así como dar la posibilidad de borrar dicho contacto. Está compuesta por:
+
+\begin{enumerate}
+  \item Los campos del contacto obtenidos en la negociación.
+  \item Un botón para borrar el contacto y volver a la pantalla de contactos guardados.
+  \item Un botón para volver a la pantalla de contactos guardados.
+\end{enumerate}
+
+\subsection{Pantalla del listado de negociaciones}
+\label{subsec:pantalla_listado_negociaciones}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=10cm, keepaspectratio]{img/negotationslist}
+  \caption{Pantalla del listado de negociaciones}
+  \label{fig:negotationslist}
+\end{figure}
+
+El propósito de esta pantalla es mostrar un listado de las negociaciones guardadas y su estado para tener un seguimiento de las mismas. Cada negociación se divide en filas y cada fila está compuesta por:
+
+\begin{enumerate}
+  \item El trabajo del contacto, no aparecerá nada en caso de que este campo no sea público.
+  \item El sueldo bruto del contacto.
+  \item Los sectores del contacto, si alguno no es público no aparecerá.
+  \item El estado de la negociación que puede ser: enviada, aceptada, rechazada, recibida.
+\end{enumerate}
+
+Cuando se pulsa en una negociación en concreto se iniciarán distintos procesos según su estado:
+
 \begin{itemize}
-  \item Los campos públicos de un contacto
-  \item Un botón para enviar una solicitud de negociación a dicho contacto.
+  \item Si la negociación se encuentra en estado enviada se iniciará la pantalla de revisión de negociación.
+  \item Si la negociación se encuentra en estado aceptada se dará la posibilidad de iniciar la pantalla del perfil del contacto obtenido y de borrar el registro de dicha negociación del listado.
+  \item Si la negociación se encuentra en estado rechazada se dará la posibilidad de borrar el registro de dicha negociación del listado.
+  \item Si la negociación se encuentra en estado recibida se iniciará la pantalla de recepción de negociación.
 \end{itemize}
 
-Cuando se pulsa el botón enviar negociación se inicia la pantalla de negociación. 
+\subsection{Pantalla de revisión de negociación}
+\label{subsec:pantalla_revision_negociacion}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=10cm, keepaspectratio]{img/negotationrevision}
+  \caption{Pantalla de revisión de negociación}
+  \label{fig:negotationrevision}
+\end{figure}
+
+El propósito de esta pantalla es revisar que datos personales se han solicitado y cuales se han ofrecido a cambio. Está compuesta por:
+
+\begin{enumerate}
+  \item Una columna con los diferentes campos de un usuario y un switch para indicar que datos han sido solicitados.
+  \item Una columna con los diferentes campos de un usuario y un switch para indicar que datos se han ofrecido.
+  \item Un botón para mandar una contraoferta.
+  \item Un botón para eliminar la negociación, avisar al servidor para que también borre dicha solicitud y volver a la pantalla del listado de negociaciones.
+  \item Un botón para cancelar y volver a la pantalla del listado de negociaciones.
+\end{enumerate}
+
+Cuando se pulsa el botón de contraoferta se envía al servidor que la solicitud actual ha sido rechazada y se inicia la pantalla envío de negociación. 
+Finalmente se retorna al listado de negociaciones.
+
+\subsection{Pantalla de recepción de negociación}
+\label{subsec:pantalla_recepcion_negociacion}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=10cm, keepaspectratio]{img/negotationresponse}
+  \caption{Pantalla de recepción de negociación}
+  \label{fig:negotationresponse}
+\end{figure}
+
+El propósito de esta pantalla es revisar que datos personales se han solicitado y cuales se han ofrecido a cambio. Está compuesta por:
+
+\begin{enumerate}
+  \item Una columna con los diferentes campos de un usuario y un switch para indicar que datos han sido solicitados.
+  \item Una columna con los diferentes campos de un usuario y un switch para indicar que datos se han ofrecido.
+  \item Un botón para aceptar la negociación.
+  \item Un botón para mandar una contraoferta.
+  \item Un botón para rechazar la negociación, avisar al servidor de que dicha solicitud ha sido rechazada y volver a la pantalla del listado de negociaciones.
+  \item Un botón para cancelar y volver a la pantalla del listado de negociaciones.
+\end{enumerate}
+
+Cuando se pulsa el botón de aceptar negociación se comprueba que el usuario tenga rellenos los campos que ha ofrecido, en caso de estar alguno vacío se avisa de que debe rellenarlos para cumplimentar el envío.
+Posteriormente se envían al servidor los datos seleccionados para que este se encargue de su transmisión al otro usuario. Además, en local se añade a la lista de contactos guardados el nuevo contacto obtenido.
+Cuando se pulsa el botón de contraoferta se envía al servidor que la solicitud actual ha sido rechazada y se inicia la pantalla envío de negociación. 
+Finalmente se retorna al listado de negociaciones.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
